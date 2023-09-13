@@ -25,3 +25,7 @@ div.card-infos {
 .invalid-feedback {
     display: block;
 }
+
+nav.bg-primary {
+    background-color: #0d1950 !important;
+}
