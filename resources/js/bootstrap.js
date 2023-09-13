@@ -5,8 +5,6 @@
  */
 
 import axios from "axios";
-// Testar essa linha se ela pode ser removida
-import "bootstrap";
 import $ from "jquery";
 import * as bootstrap from "bootstrap";
 
