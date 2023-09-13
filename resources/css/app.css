@@ -21,3 +21,7 @@ div.card-infos {
     margin-bottom: 2rem;
     text-align: center;
 }
+
+.invalid-feedback {
+    display: block;
+}

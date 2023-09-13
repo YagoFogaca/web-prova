@@ -37,14 +37,13 @@ class TeachersController extends Controller
                 'password' =>  $request->input('password'),
             ];
 
-            $teacherAuth = Auth::guard('teachers')->attempt($credentials, $request->input('remember'));
+            $teacherAuth = Auth::guard('teacher')->attempt($credentials, $request->input('remember'));
             if (!$teacherAuth) {
                 throw new Exception("Email ou senha inválido", 1);
             }
 
-            return redirect()->route('');
+            return redirect()->route('platform.index');
         } catch (Exception $error) {
-            dd($error->getMessage());
             return redirect()->back()->withErrors(['authentication' => $error->getMessage()]);
         }
     }

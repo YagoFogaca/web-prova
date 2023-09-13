@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TeachersController;
+use App\Http\Controllers\PlatformController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(TeachersController::class)->group(function () {
     Route::get('/teachers/login', 'login')->name('teachers.login');
     Route::post('/teachers/auth', 'auth')->name('teachers.auth');
+});
+
+Route::controller(PlatformController::class)->group(function () {
+    Route::get('/platform', 'index')->middleware('auth.teachers:teacher')->name('platform.index');
 });
