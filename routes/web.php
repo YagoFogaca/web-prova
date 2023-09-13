@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::controller(TeachersController::class)->group(function () {
+    Route::get('/teachers/login', 'login')->name('teachers.login');
+    Route::post('/teachers/auth', 'auth')->name('teachers.auth');
 });
