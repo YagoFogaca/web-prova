@@ -13,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Provas</a>
+                    <a class="nav-link" href="{{ route('exams.index') }}">Provas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Questões</a>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\ExamsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,8 @@ Route::controller(TeachersController::class)->group(function () {
 
 Route::controller(PlatformController::class)->group(function () {
     Route::get('/platform', 'index')->middleware('auth.teachers:teacher')->name('platform.index');
+});
+
+Route::controller(ExamsController::class)->group(function () {
+    Route::get('/exams', 'index')->middleware('auth.teachers:teacher')->name('exams.index');
 });
