@@ -31,7 +31,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sair</a></li>
+                        <li><a class="dropdown-item" href="{{ route('teachers.logout') }}">Sair</a></li>
                     </ul>
                 </li>
             </ul>

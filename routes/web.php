@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::controller(TeachersController::class)->group(function () {
     Route::get('/teachers/login', 'login')->name('teachers.login');
     Route::post('/teachers/auth', 'auth')->name('teachers.auth');
+
+    Route::get('/teachers/logout', 'logout')->middleware('auth.teachers:teacher')->name('teachers.logout');
 });
 
 Route::controller(PlatformController::class)->group(function () {
