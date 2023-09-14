@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('points');
             $table->string('average');
-            $table->string('access_code');
+            $table->string('access_code')->nullable();
             $table->string('matter')->nullable();
             $table->dateTime('access_termination', 0);
             $table->dateTime('access', 0);
