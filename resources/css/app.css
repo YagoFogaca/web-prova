@@ -1,6 +1,8 @@
 @import url("~bootstrap/css/bootstrap.min.css");
 @import url("~bootstrapIcons/bootstrap-icons.min.css");
 
+/* Página de login */
+
 main.container-auth {
     min-height: 100vh;
     display: flex;
@@ -22,10 +24,30 @@ div.card-infos {
     text-align: center;
 }
 
-.invalid-feedback {
+p.invalid-feedback {
     display: block;
 }
 
+/* Menu de navegação */
+
 nav.bg-primary {
     background-color: #0d1950 !important;
+}
+
+div.container-fluid {
+    max-width: 1326px;
+    width: 90%;
+}
+
+/* Plataforma */
+
+main.container-platform {
+    min-height: calc(100vh - 91px);
+}
+
+section.card-platform {
+    width: 90%;
+    max-width: 1326px;
+    margin: 0 auto;
+    padding: 3rem 0.75rem;
 }
