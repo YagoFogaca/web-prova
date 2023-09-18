@@ -81,6 +81,7 @@ section.container-exams {
 
 section.display-table {
     overflow: auto;
+    min-height: 70vh;
 }
 
 span.span-info {
