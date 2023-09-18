@@ -14,8 +14,11 @@ class ExamsController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.exams.index');
+        $exams = Exams::where('teacher_id', Auth::id())->get()->toArray();
+        foreach ($exams as &$exam) {
+            $exam['created_at'] = date("d-m-Y", strtotime($exam['created_at']));
+        }
+        return view('pages.exams.index', ['exams' => $exams]);
     }
 
     /**

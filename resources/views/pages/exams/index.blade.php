@@ -16,18 +16,21 @@
                         <th>Matéria</th>
                         <th class="table-row">T/Pontos</th>
                         <th class="table-row">M/Pontos</th>
-                        <th class="table-row">Data</th>
+                        <th class="table-row-data">Data / Criação</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr class="exams" data-url='exams.show'>
-                        <td class="title">Prova 1</td>
-                        <td>Algoritmos</td>
-                        <td class="table-row">10</td>
-                        <td class="table-row">6</td>
-                        <td class="table-row">05/09/2023</td>
-                    </tr>
+
+                    @foreach ($exams as $exam)
+                        <tr class="exams" data-url='exams.show'>
+                            <td class="title">{{ $exam['title'] }}</td>
+                            <td>{{ $exam['matter'] ?? 'N/A' }}</td>
+                            <td class="table-row">{{ $exam['points'] }}</td>
+                            <td class="table-row">{{ $exam['average'] }}</td>
+                            <td class="table-row-data">{{ $exam['created_at'] }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </section>
