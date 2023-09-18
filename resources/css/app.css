@@ -108,7 +108,7 @@ tr:nth-child(even) {
 }
 
 .title {
-    min-width: 75px;
+    min-width: 125px;
 }
 
 .table-row {
