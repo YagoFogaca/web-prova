@@ -63,7 +63,7 @@ class ExamsController extends Controller
      */
     public function show(Exams $exam)
     {
-        dd($exam->toArray());
+        return view('pages.exam-show.index', ['exam' => $exam]);
 
 
         // {{-- <div class="mb-3 col-md-6">

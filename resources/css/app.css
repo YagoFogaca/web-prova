@@ -42,14 +42,19 @@ div.container-fluid {
 /* Plataforma */
 
 main.container-platform {
-    min-height: calc(100vh - 91px);
+    min-height: calc(100vh - (91px + 48px));
 }
 
 section.card-platform {
     width: 90%;
     max-width: 1326px;
-    margin: 0 auto;
-    padding: 3rem 0.75rem;
+    margin: 3rem auto;
+    padding: 0rem 0.75rem;
+}
+
+section.card-platform-variation {
+    border: 1px solid #dedede;
+    padding: 0rem;
 }
 
 article.infos {
@@ -72,10 +77,10 @@ article.infos h4 {
     opacity: 1;
     background-color: #ed1e79;
     border-color: #ed1e79;
+    color: #dedede;
 }
 
 section.container-exams {
-    border-top: 1px solid #dedede;
     padding: 1.5rem 0px;
 }
 
@@ -115,4 +120,43 @@ tr:nth-child(even) {
 .table-row {
     width: 5%;
     text-align: center;
+}
+
+section.card-exam {
+    border-bottom: 1px solid #dedede;
+    padding: 0rem 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+div.infos-exams {
+    width: 50%;
+    min-width: 170px;
+}
+
+div.access_code {
+    width: 154px;
+}
+
+section.container-nav-tabs {
+    padding: 1rem 0rem;
+}
+
+ul.nav {
+    justify-content: space-around;
+}
+
+ul.nav .nav-link {
+    color: #0d1950;
+}
+
+div.tab-pane {
+    padding: 0.75rem;
+}
+
+@media (max-width: 320px) {
+    section.card-exam h5 {
+        font-size: 1.1rem;
+    }
 }
