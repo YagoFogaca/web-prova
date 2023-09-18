@@ -8,40 +8,27 @@
         </article>
 
         <section class="container-exams display-table">
+
             <table>
+                <thead>
+                    <tr>
+                        <th class="title">Título</th>
+                        <th>Matéria</th>
+                        <th class="table-row">T/Pontos</th>
+                        <th class="table-row">M/Pontos</th>
+                        <th class="table-row">Data</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <th class="title">Título</th>
-                    <th>Matéria</th>
-                    <th class="table-row">T/Pontos</th>
-                    <th class="table-row">M/Pontos</th>
-                    <th class="table-row">Data</th>
-                    <th class="table-row">Editar</th>
-                </tr>
-
-                <tr>
-                    <td class="title">Prova 2</td>
-                    <td>Algoritmos</td>
-                    <td class="table-row">10</td>
-                    <td class="table-row">6</td>
-                    <td class="table-row">10/09/2023</td>
-                    <td class="table-row">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-three-dots-vertical"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" style="cursor: pointer">Editar</a>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item btn-delete-contact">Deletar</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-
+                <tbody>
+                    <tr class="exams" data-url='exams.show'>
+                        <td class="title">Prova 1</td>
+                        <td>Algoritmos</td>
+                        <td class="table-row">10</td>
+                        <td class="table-row">6</td>
+                        <td class="table-row">05/09/2023</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </section>
