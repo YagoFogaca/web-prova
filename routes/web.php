@@ -5,19 +5,6 @@ use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\ExamsController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-
-
 Route::controller(TeachersController::class)->group(function () {
     Route::get('/teachers/login', 'login')->name('teachers.login');
     Route::post('/teachers/auth', 'auth')->name('teachers.auth');
@@ -30,8 +17,12 @@ Route::controller(PlatformController::class)->group(function () {
 });
 
 Route::controller(ExamsController::class)->group(function () {
+    // Visualizar todas as provas criar pelo professor
     Route::get('/exams', 'index')->middleware('auth.teachers:teacher')->name('exams.index');
-
+    // Página para criar provas
     Route::get('/exams/create', 'create')->middleware('auth.teachers:teacher')->name('exams.create');
+    // Visualizar uma prova
+    Route::get('/exams/{exam}', 'show')->middleware('auth.teachers:teacher')->name('exams.show');
+    // Criar prova
     Route::post('/exams', 'store')->middleware('auth.teachers:teacher')->name('exams.store');
 });

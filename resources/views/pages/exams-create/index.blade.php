@@ -10,7 +10,7 @@
             <form action="{{ route('exams.store') }}" method="POST" class="row g-3">
                 @csrf
 
-                @error('create')
+                @error('create-exam')
                     <div class="mb-3">
                         <p class="invalid-feedback">Ocorreu um erro ao criar a prova</p>
                     </div>
@@ -31,7 +31,8 @@
 
                 <div class="mb-3 col-md-6">
                     <label for="points" class="form-label">Total de pontos</label>
-                    <input type="number" class="form-control" id="points" name="points" required placeholder="10.0">
+                    <input type="number" class="form-control" id="points" name="points" required placeholder="10.0"
+                        min="0">
                 </div>
 
                 <div class="mb-3 col-md-6">
@@ -40,24 +41,12 @@
                         step="0.01" min="0">
                 </div>
 
-                <div class="mb-3 col-md-6">
-                    <label for="access" class="form-label">Inicio da prova</label>
-                    <input type="datetime-local" class="form-control" id="access" name="access" required>
-                </div>
-
-                <div class="mb-3 col-md-6">
-                    <label for="access_termination" class="form-label">Termino da prova</label>
-                    <input type="datetime-local" class="form-control" id="access_termination" name="access_termination"
-                        required>
-                </div>
-
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary btn-bd-primary">Seguir</button>
                 </div>
 
             </form>
         </section>
-
 
     </section>
 @endsection
