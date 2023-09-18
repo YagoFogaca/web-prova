@@ -31,4 +31,7 @@ Route::controller(PlatformController::class)->group(function () {
 
 Route::controller(ExamsController::class)->group(function () {
     Route::get('/exams', 'index')->middleware('auth.teachers:teacher')->name('exams.index');
+
+    Route::get('/exams/create', 'create')->middleware('auth.teachers:teacher')->name('exams.create');
+    Route::post('/exams', 'store')->middleware('auth.teachers:teacher')->name('exams.store');
 });
