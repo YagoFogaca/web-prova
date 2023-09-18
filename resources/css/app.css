@@ -56,6 +56,10 @@ article.infos {
     padding: 1rem;
 }
 
+article.infos h4 {
+    margin: 0;
+}
+
 .btn-bd-primary {
     background-color: #ed1e78e1;
     border-color: #ed1e79;
@@ -75,7 +79,39 @@ section.container-exams {
     padding: 1.5rem 0px;
 }
 
+section.display-table {
+    overflow: auto;
+}
+
 span.span-info {
     opacity: 0.7;
     font-size: 14px;
+}
+
+/* Tabela de exebição de prova */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ebebeb;
+}
+
+.title {
+    min-width: 75px;
+}
+
+.table-row {
+    width: 5%;
+    text-align: center;
 }
