@@ -14,19 +14,19 @@ return new class extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('points');
-            $table->string('average');
+            $table->decimal('points', 8, 2);
+            $table->decimal('average', 8, 2);
             $table->string('access_code')->nullable();
             $table->string('matter')->nullable();
-            $table->dateTime('access_termination', 0);
-            $table->dateTime('access', 0);
+            $table->dateTime('access', 0)->nullable();
+            $table->dateTime('access_termination', 0)->nullable();
             $table->unsignedBigInteger('teacher_id');
             $table->timestamps();
             $table->foreign('teacher_id')->references('id')->on('teachers');
         });
     }
 
-    /**
+    /** php artisan migrate:rollback --step=5
      * Reverse the migrations.
      */
     public function down(): void
