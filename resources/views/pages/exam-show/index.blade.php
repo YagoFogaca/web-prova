@@ -64,8 +64,6 @@
 
                 @include('components.tab-pane-questions.index')
                 @include('components.tab-pane-students.index')
-                {{-- <div class="tab-pane fade" id="students" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                    Alunos</div> --}}
 
             </div>
 
