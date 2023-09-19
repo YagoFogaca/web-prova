@@ -51,20 +51,22 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Questões</button>
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#questions"
+                        type="button" role="tab" aria-controls="questions" aria-selected="true">Questões</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Alunos</button>
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#students" type="button"
+                        role="tab" aria-controls="students" aria-selected="false">Alunos</button>
                 </li>
             </ul>
 
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                    tabindex="0">Questões</div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                    tabindex="0">Alunos</div>
+
+                @include('components.tab-pane-questions.index')
+                @include('components.tab-pane-students.index')
+                {{-- <div class="tab-pane fade" id="students" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                    Alunos</div> --}}
+
             </div>
 
         </section>

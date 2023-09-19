@@ -61,7 +61,12 @@ article.infos {
     padding: 1rem;
 }
 
-article.infos h4 {
+article.infos-variation {
+    border-bottom: 1px solid #dedede;
+}
+
+article.infos h4,
+article.infos h5 {
     margin: 0;
 }
 
