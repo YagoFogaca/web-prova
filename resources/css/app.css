@@ -126,6 +126,10 @@ tr:nth-child(even) {
     min-width: 123px;
 }
 
+.exams {
+    cursor: pointer;
+}
+
 section.card-exam {
     border-bottom: 1px solid #dedede;
     padding: 0rem 0.75rem 1rem;
