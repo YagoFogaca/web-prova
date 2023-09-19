@@ -13,7 +13,7 @@
                 <div class="mb-3">
                     <label for="statement" class="form-label">Enunciado</label>
                     <textarea class="form-control form-control-textarea" placeholder="Escreva seu enunciado" id="statement" name="statement"
-                        required></textarea>
+                        required autocomplete></textarea>
                 </div>
 
                 <div class="row g-3 align-items-center">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-auto">
                         <input type="number" id="points" class="form-control" name="points" min="0.10"
-                            step="0.1" placeholder="Valor da questão">
+                            step="0.1" placeholder="Valor da questão" required>
                     </div>
                     <div class="col-auto">
                         <span id="passwordHelpInline" class="form-text">
@@ -32,7 +32,17 @@
 
                 </div>
 
-                <h5>Respostas</h5>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <h5 class="m-0">Respostas</h5>
+                    </div>
+                    <div class="col-auto">
+                        <span id="passwordHelpInline" class="form-text">
+                            Ao menos duas repostas devem ser criadas.
+                        </span>
+                    </div>
+                </div>
+
 
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
@@ -40,11 +50,11 @@
                     </div>
                     <div class="col-auto col-auto-variation">
                         <input type="text" id="alternative" class="form-control" name="alternative[a]"
-                            placeholder="Escreva sua alternativa">
+                            placeholder="Escreva sua alternativa" required>
                     </div>
                     <div class="col-auto">
                         <input type="radio" class="form-check-input" id="correct_alternative" name="correct_alternative"
-                            value="a">
+                            value="a" checked>
                         <label for="correct_alternative" class="form-check-label">Reposta correta</label>
                     </div>
                 </div>
@@ -55,7 +65,7 @@
                     </div>
                     <div class="col-auto col-auto-variation">
                         <input type="text" id="alternative-b" class="form-control" name="alternative[b]"
-                            placeholder="Escreva sua alternativa">
+                            placeholder="Escreva sua alternativa" required>
                     </div>
                     <div class="col-auto">
                         <input type="radio" class="form-check-input" id="alternative-check-b" name="correct_alternative"
@@ -88,8 +98,8 @@
                             placeholder="Escreva sua alternativa">
                     </div>
                     <div class="col-auto">
-                        <input type="radio" class="form-check-input" id="alternative-check-d" name="correct_alternative"
-                            value="d">
+                        <input type="radio" class="form-check-input" id="alternative-check-d"
+                            name="correct_alternative" value="d">
                         <label for="alternative-check-d" class="form-check-label">Reposta correta</label>
                     </div>
                 </div>
@@ -108,6 +118,8 @@
                         <label for="alternative-check-e" class="form-check-label">Reposta correta</label>
                     </div>
                 </div>
+
+                <input type="hidden" name="exam_id" value="{{ $exam_id }}">
 
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary btn-bd-primary">Criar</button>
