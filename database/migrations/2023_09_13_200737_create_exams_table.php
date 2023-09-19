@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('matter')->nullable();
             $table->decimal('points', 8, 2);
             $table->decimal('average', 8, 2);
+            $table->decimal('remaining_points', 8, 2)->nullable();
             $table->string('access_code')->nullable();
-            $table->string('matter')->nullable();
             $table->dateTime('access', 0)->nullable();
             $table->dateTime('access_termination', 0)->nullable();
             $table->unsignedBigInteger('teacher_id');
