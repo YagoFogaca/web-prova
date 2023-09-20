@@ -27,11 +27,22 @@
             </div>
 
 
-            @if (count($exam['questions']) <= 0)
+            @if (count($exam['questions']) < 2 || $exam['remaining_points'] > 0)
                 <div>
-                    <p class="text-danger">
-                        Você não criou nenhuma questão para a prova, crie para liberar o acesso a prova.</a>
-                    </p>
+                    @if (count($exam['questions']) < 2)
+                        <p class="text-danger">
+                            Você precisa criar no minimo 2 questões para liberar a prova. Faltam
+                            {{ count($exam['questions']) }}.
+                        </p>
+                    @endif
+
+                    @if ($exam['remaining_points'] > 0)
+                        <p class="text-danger">
+                            Você precisa distribuir todos os pontos para liberar a prova. Faltam
+                            {{ $exam['remaining_points'] }}.
+                        </p>
+                    @endif
+
                 </div>
             @else
                 <div class="d-flex justify-content-between flex-wrap align-items-top">
