@@ -13,6 +13,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="card-title">Questão {{ $key + 1 }}</h5>
+                        <p>Valor: {{ $question['points'] }}</p>
                         <div class="btn-group">
                             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-three-dots-vertical"></i>
