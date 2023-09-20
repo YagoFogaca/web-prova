@@ -181,6 +181,11 @@ div.col-auto .form-check-input {
     border-color: #000;
 }
 
+div.card-question {
+    width: 100%;
+    margin-top: 1rem;
+}
+
 @media (max-width: 320px) {
     section.card-exam h5 {
         font-size: 1.1rem;

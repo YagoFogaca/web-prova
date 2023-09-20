@@ -31,20 +31,18 @@
                 <div>
                     @if (count($exam['questions']) < 2)
                         <p class="text-danger">
-                            Você precisa criar no minimo 2 questões para liberar a prova. Faltam
-                            {{ count($exam['questions']) }}.
+                            Você precisa criar no minimo 2 questões para liberar a prova.
                         </p>
                     @endif
 
-                    @if ($exam['remaining_points'] > 0)
+                    @if ($exam['remaining_points'] > 0 || !$exam['remaining_points'])
                         <p class="text-danger">
-                            Você precisa distribuir todos os pontos para liberar a prova. Faltam
-                            {{ $exam['remaining_points'] }}.
+                            Você precisa distribuir todos os pontos para liberar a prova.
                         </p>
                     @endif
 
                 </div>
-            @else
+            @elseif ($exam['access_code'])
                 <div class="d-flex justify-content-between flex-wrap align-items-top">
                     <div>
                         <p>Data e hora de inicio: </br> {{ $exam['access'] }}</p>
@@ -52,6 +50,12 @@
                     </div>
                     <div class="access_code">
                         <p>Código de acesso: </br>{{ $exam['access_code'] }}</p>
+                    </div>
+                </div>
+            @else
+                <div class="d-flex justify-content-between flex-wrap align-items-top">
+                    <div>
+                        <button class="btn btn-primary btn-bd-primary" id="btn-access-code">Gerar código de acesso</button>
                     </div>
                 </div>
             @endif
@@ -73,7 +77,7 @@
 
             <div class="tab-content" id="myTabContent">
 
-                @include('components.tab-pane-questions.index')
+                @include('components.tab-pane-questions.index', ['questions' => $exam['questions']])
                 @include('components.tab-pane-students.index')
 
             </div>

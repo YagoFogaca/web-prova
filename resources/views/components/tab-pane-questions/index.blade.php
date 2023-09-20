@@ -4,4 +4,26 @@
         <a class="btn btn-primary btn-bd-primary btn-sm"
             href="{{ route('questions.create', ['exam' => $exam['id']]) }}">Criar Questão</a>
     </article>
+
+    <div>
+        @foreach ($questions as $key => $question)
+            <div class="card card-question">
+                <div class="card-body">
+                    <h5 class="card-title">Questão {{ $key + 1 }}</h5>
+                    <p class="card-text">{{ $question['statement'] }}</p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    @foreach ($question['alternatives'] as $key => $alternative)
+                        <li
+                            class="list-group-item {{ $alternative['correct_alternative'] ? 'bg-success-subtle' : 'bg-danger-subtle' }}">
+                            {{ $key === 0 ? 'A)' : ($key === 1 ? 'B)' : ($key === 2 ? 'C)' : ($key === 3 ? 'D)' : 'E)'))) }}
+                            {{ $alternative['alternative'] }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endforeach
+
+    </div>
 </div>
