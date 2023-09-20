@@ -23,7 +23,7 @@ Route::controller(ExamsController::class)->group(function () {
     // Página para criar provas
     Route::get('/exams/create', 'create')->middleware('auth.teachers:teacher')->name('exams.create');
     // Visualizar uma prova
-    Route::get('/exams/{exam}', 'show')->middleware('auth.teachers:teacher')->name('exams.show');
+    Route::get('/exams/{id}', 'show')->middleware('auth.teachers:teacher')->name('exams.show');
     // Criar prova
     Route::post('/exams', 'store')->middleware('auth.teachers:teacher')->name('exams.store');
 });

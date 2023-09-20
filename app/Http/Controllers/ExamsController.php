@@ -55,7 +55,7 @@ class ExamsController extends Controller
                 throw new Exception("Ocorreu um erro interno ao criar a prova", 1);
             }
 
-            return redirect()->route('exams.show', ['exam' => $examCreated]);
+            return redirect()->route('exams.show', ['id' => $examCreated['id']]);
         } catch (Exception $error) {
             return redirect()->back()->withErrors(['create-exam' => 'Ocorreu um erro ao criar a prova']);
         }
@@ -64,21 +64,10 @@ class ExamsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Exams $exam)
+    public function show(string $id)
     {
+        $exam = Exams::with('questions.alternatives')->find($id)->toArray();
         return view('pages.exam-show.index', ['exam' => $exam]);
-
-
-        // {{-- <div class="mb-3 col-md-6">
-        //     <label for="access" class="form-label">Inicio da prova</label>
-        //     <input type="datetime-local" class="form-control" id="access" name="access" required>
-        // </div>
-
-        // <div class="mb-3 col-md-6">
-        //     <label for="access_termination" class="form-label">Termino da prova</label>
-        //     <input type="datetime-local" class="form-control" id="access_termination" name="access_termination"
-        //         required>
-        // </div> --}}
     }
 
     /**

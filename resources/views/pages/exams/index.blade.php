@@ -23,7 +23,7 @@
                 <tbody>
 
                     @foreach ($exams as $exam)
-                        <tr class="exams" data-url="{{ route('exams.show', ['exam' => $exam['id']]) }}">
+                        <tr class="exams" data-url="{{ route('exams.show', ['id' => $exam['id']]) }}">
                             <td class="title">{{ $exam['title'] }}</td>
                             <td>{{ $exam['matter'] ?? 'N/A' }}</td>
                             <td class="table-row">{{ $exam['points'] }}</td>
