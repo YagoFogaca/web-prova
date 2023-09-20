@@ -27,7 +27,7 @@
             </div>
 
 
-            @if (!$exam['questions'])
+            @if (count($exam['questions']) <= 0)
                 <div>
                     <p class="text-danger">
                         Você não criou nenhuma questão para a prova, crie para liberar o acesso a prova.</a>
