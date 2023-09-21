@@ -30,7 +30,7 @@
                 <ul class="list-group list-group-flush">
                     @foreach ($question['alternatives'] as $key => $alternative)
                         <li
-                            class="list-group-item {{ $alternative['correct_alternative'] ? 'bg-success-subtle' : 'bg-danger-subtle' }}">
+                            class="list-group-item {{ $alternative['correct_alternative'] ? 'bg-success-subtle' : '' }}">
                             {{ $key === 0 ? 'A)' : ($key === 1 ? 'B)' : ($key === 2 ? 'C)' : ($key === 3 ? 'D)' : 'E)'))) }}
                             {{ $alternative['alternative'] }}
                         </li>
